@@ -17,7 +17,7 @@ $resultado = $banco->query($select)->fetchAll();
 //var_dump ($resultado);
 
 ?>
-<main class="container my-5">
+main class="container my-5">
     <table class="table table-striped">   
         <tr>
             <td>id</td>
@@ -27,10 +27,10 @@ $resultado = $banco->query($select)->fetchAll();
 
         <?php foreach ($resultado as $lista) {  ?>
             <tr>
-                <td> <?= $lista['id'] ?></td>
+                <td> <?= $lista['id'] ?> </td>
                 <td><?php echo $lista['nome'] ?></td>
                 <td class="text-center">
-                    <a href="#" class="btn btn-primary">Abrir</a>
+                    <a href="./ficha.php?id_aluno=<?= $lista['id'] ?>" class="btn btn-primary">Abrir</a>
                     <a href="#" class="btn btn-warning">Editar</a>
                     <a href="#" class="btn btn-danger">Excluir</a>
                 </td>
