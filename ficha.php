@@ -8,20 +8,12 @@ $password = '';
 
 $banco = new PDO($dsn, $user, $password);
 
-$select = 'SELECT * FROM tb_info_alunos where id_alunos = ' . $id_aluno;
+$select = 'SELECT tb_info_alunos.*, tb_alunos.nome FROM tb_info_alunos INNER JOIN tb_alunos ON tb_alunos.id = tb_info_alunos.id_alunos WHERE tb_info_alunos.id_alunos = ' . $id_aluno;
 
 $dados = $banco->query($select)->fetch();
 
-echo '<pre>';
-var_dump($dados);
 
 ?>
-
-
-
-
-
-
 
 
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -45,12 +37,12 @@ var_dump($dados);
 
 <main class="container text-center my-5">
 
-    <img src="./chamadinha/img/bleach.jpg" alt="imagem do perfil" class="img-thumbnail">
+    <img src="./chamadinha/img/<?=$dados['img']?>" alt="imagem do perfil" class="img-thumbnail">
 
     <form action="#">
 
-        <label for="nome">Nome:</label class="form-control">
-        <input type="text" value="Paulo Santos" disabled class="form-control">
+        <label for="nome">Nome:</label>
+        <input type="text" value="<?= $dados['nome'] ?>" disabled class="form-control">
         <div class="row mt-2 ">
 
             <div class="col">
