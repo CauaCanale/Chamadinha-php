@@ -45,14 +45,12 @@ METODO DE ENVIO ->
 
 -->
 
-<body>
-
     <form action="./aluno-cadastrar.php" method="POST">
 
         <h2>Formulario top</h2>
 
-        <input type="text" placeholder="Nome:" name="tel">
-        <input type="number" placeholder="Telefone:" name="nome">
+        <input type="text" placeholder="Nome:" name="nome">
+        <input type="number" placeholder="Telefone:" name="telefone">
         <input type="email" placeholder="Email:" name="email">
         <input type="date" placeholder="Nascimento:" name="nasc">
 
@@ -65,4 +63,3 @@ METODO DE ENVIO ->
         <input type="submit">
 
     </form>
-</body>
